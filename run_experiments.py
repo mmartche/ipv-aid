@@ -284,7 +284,7 @@ def evaluate(
         "precision_weighted": prec_w,
         "recall_weighted": rec_w,
         "f1_weighted": f1_w,
-        "confusion_matrix_path": str(cm_path),
+        "cm_image": str(cm_path),
     }
     row.update(flat_cm)
     return row
