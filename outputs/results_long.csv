@@ -1,4 +1,4 @@
-dataset,test_size,test_pct,preprocessing,model,accuracy,precision_weighted,recall_weighted,f1_weighted,confusion_matrix_path,cm_00,cm_01,cm_10,cm_11
+dataset,test_size,test_pct,preprocessing,model,accuracy,precision_weighted,recall_weighted,f1_weighted,cm_image,cm_00,cm_01,cm_10,cm_11
 Breast Cancer,0.15,15,labelEncoder,Naive Bayes,0.9418604651162791,0.9424787586261918,0.9418604651162791,0.9420360122381422,/Users/martche/localhost/ipv-aid/outputs/confusion_matrices/breast_cancer__test15__labelencoder__naive_bayes.png,30,2,3,51
 Breast Cancer,0.15,15,labelEncoder,Decision Tree,0.9418604651162791,0.9451631815516904,0.9418604651162791,0.9423315317102197,/Users/martche/localhost/ipv-aid/outputs/confusion_matrices/breast_cancer__test15__labelencoder__decision_tree.png,31,1,4,50
 Breast Cancer,0.15,15,labelEncoder,Random Forest,0.9534883720930233,0.9534883720930233,0.9534883720930233,0.9534883720930233,/Users/martche/localhost/ipv-aid/outputs/confusion_matrices/breast_cancer__test15__labelencoder__random_forest.png,30,2,2,52
