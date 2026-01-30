@@ -26,3 +26,9 @@ python make_report.py
 - O script baixa automaticamente o dataset de Heart Failure do UCI.
 - Os resultados sao sensiveis ao `random_state` e a hiperparametros; para garantir
   comparabilidade, usamos valores padrao e `random_state=42` sempre que aplicavel.
+
+
+## Instalacao local
+```bash 
+pip install -r requirements.txt
+```
