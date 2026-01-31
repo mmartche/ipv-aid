@@ -1,9 +1,3 @@
-"""Generate a PDF report from results_long.csv.
-
-The report is aimed at the assignment deliverable: explain methodology, show tables
-similar to the requested template, and provide a short critical analysis.
-"""
-
 from __future__ import annotations
 
 import math
@@ -204,13 +198,13 @@ def build_report(results_csv: Path, pdf_out: Path) -> None:
     elems.append(Paragraph("Breast Cancer Dataset", styles["Heading2"]))
     elems.append(
         Paragraph(
-            "Breast Cancer (Wisconsin – Diagnostic)",
+            "Breast Cancer (Wisconsin – Diagnostic)"
             "Original source: UCI Machine Learning Repository"
-            "https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)",
-            "Authors: University of Wisconsin–Madison",
-            "Available on: scikit-learn datasets module",
-            "https://scikit-learn.org/stable/datasets/toy_dataset.html#breast-cancer-dataset",
-            "Data type: Actual measurements extracted from biopsy images",
+            "https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)"
+            "Authors: University of Wisconsin–Madison"
+            "Available on: scikit-learn datasets module"
+            "https://scikit-learn.org/stable/datasets/toy_dataset.html#breast-cancer-dataset"
+            "Data type: Actual measurements extracted from biopsy images"
             "Academic use: Extremely common (almost a “reference dataset”)",
             styles["BodyText"],
         )
@@ -218,12 +212,12 @@ def build_report(results_csv: Path, pdf_out: Path) -> None:
     elems.append(Paragraph("Heart Failure Dataset", styles["Heading2"]))
     elems.append(
         Paragraph(
-            "Heart Failure (Clinical Records)",
-            "Source: UCI Machine Learning Repository",
-            "https://archive.ics.uci.edu/ml/datasets/Heart+failure+clinical+records",
-            "Available on: Kaggle",
-            "https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data",
-            "Data type: actual clinical records of patients with heart failure",
+            "Heart Failure (Clinical Records)"
+            "Source: UCI Machine Learning Repository"
+            "https://archive.ics.uci.edu/ml/datasets/Heart+failure+clinical+records"
+            "Available on: Kaggle"
+            "https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data"
+            "Data type: actual clinical records of patients with heart failure"
             "Attributes: age, ejection fraction, serum creatinine, anemia, etc.",
             styles["BodyText"],
         )
@@ -249,7 +243,7 @@ def build_report(results_csv: Path, pdf_out: Path) -> None:
 
 
 def main() -> None:
-    pdf_out = ROOT / "Relatorio_ML.pdf"
+    pdf_out = OUT_DIR / "Relatorio_ML.pdf"
     build_report(OUT_DIR / "results_long.csv", pdf_out)
     print(f"OK: {pdf_out}")
 
