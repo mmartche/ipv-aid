@@ -17,10 +17,10 @@ python make_report.py
 ```
 
 ## Saidas
-- `outputs/results_long.csv`: resultados detalhados (1 linha por modelo).
-- `outputs/results_summary.csv`: resumo (accuracy e precision ponderada) em formato de tabela.
+- `outputs/results.csv`: resultados detalhados (1 linha por modelo).
+- `outputs/results_summary.csv`: resumo (accuracy e precision ponderada) em formato de tabela. Apenas para experimento completo
 - `outputs/confusion_matrices/*.png`: imagens das matrizes de confusao.
-- `Relatorio_ML_Classification.pdf`: relatorio em PDF com metodologia e analise.
+- `outputs/Report.pdf`: relatorio em PDF com metodologia e analise.
 
 ## Observacoes
 - O script baixa automaticamente o dataset de Heart Failure do UCI.
