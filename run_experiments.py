@@ -20,7 +20,6 @@ CM_DIR = OUTPUT_DIR / "confusion_matrices"
 OUTPUT_DIR.mkdir(exist_ok=True)
 CM_DIR.mkdir(parents=True, exist_ok=True)
 
-
 def load_heart_failure(csv_path="data_cache/heart_failure_clinical_records_dataset.csv"):
     df = pd.read_csv(csv_path)
     target = "DEATH_EVENT"
@@ -95,7 +94,12 @@ def evaluate_model(
         .replace(" ", "")
     )
 
-    fig = ConfusionMatrixDisplay(cm).plot().figure_
+    disp = ConfusionMatrixDisplay(cm)
+    fig, ax = plt.subplots(figsize=(3, 3))
+    disp.plot(ax=ax, colorbar=False)
+    disp.ax_.set_xlabel("Predicted")
+    disp.ax_.set_ylabel("True")
+    fig = disp.figure_
     fig.savefig(CM_DIR / cm_filename, dpi=150, bbox_inches="tight")
     plt.close(fig)
 
@@ -112,15 +116,11 @@ def evaluate_model(
 
 def main():
     datasets = {}
-
     breast = load_breast_cancer(as_frame=True)
     datasets["BreastCancer"] = (breast.data, breast.target)
-
     datasets["HeartFailure"] = load_heart_failure()
-
     test_sizes = [0.15, 0.30, 0.50]
     results = []
-
     for dataset_name, (X, y) in datasets.items():
         preprocessors = build_preprocessors(X)
         for test_size in test_sizes:
@@ -138,8 +138,7 @@ def main():
 
     df = pd.DataFrame(results)
     df.to_csv(OUTPUT_DIR / "results.csv", index=False)
-    print("Results saved to:", OUTPUT_DIR / "results.csv")
-
+    print("Resultados salvos em:", OUTPUT_DIR / "results.csv")
 
 if __name__ == "__main__":
     main()
